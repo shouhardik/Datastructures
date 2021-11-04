@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+#define n 5
+int stack[n];
+int top=-1;
+void push(int x){
+    if(top>=4){
+        cout<<"Stack overflow";
+    }else{
+        top++;
+        stack[top]=x;
+    }
+}
+void pop(){
+    if(top==-1){
+        cout<<"Stack underflow";
+    }else{
+        top--;
+    }
+}
+void print(){
+    for(int i=top;i>=0;i--){
+        cout<<stack[i]<<' ';
+    }cout<<endl;
+}
+int main() {
+   
+   int arr[5],i;
+   cout<<"enter data"<<endl;
+   for(i=0;i<5;i++){
+       cin>>arr[i];
+       push(arr[i]);
+   }
+   print();
+   pop();
+   print();
+
+    return 0;
+}
